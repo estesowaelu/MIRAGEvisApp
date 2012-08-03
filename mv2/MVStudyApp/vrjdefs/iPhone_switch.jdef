@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?org-vrjuggler-jccl-settings definition.version="3.1"?>
+<definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.vrjuggler.org/jccl/xsd/3.1/definition" name="iPhone_switch" icon_path="jar:file:${VJ_BASE_DIR}/bin/beans/ProxyEditor.jar!/org/vrjuggler/vrjconfig/customeditors/proxyeditor/images/IS_logo.gif" xsi:schemaLocation="http://www.vrjuggler.org/jccl/xsd/3.1/definition http://www.vrjuggler.org/jccl/xsd/3.1/definition.xsd">
+   <definition_version version="1" label="iPhone Switch">
+      <abstract>false</abstract>
+      <help>Settings for an iPhone switch (&lt;a href="http://www.infiscape.com/documentation/vrjuggler-config/2.2/configuring_vr_juggler/apas03.html#d0e5377"&gt;more on Intersense stations&lt;/a&gt;)</help>
+      <parent/>
+      <category>/Devices/Digital</category>
+      <property valuetype="boolean" variable="false" name="enabled">
+         <help>Defines a switch that is displayed on the iPhone</help>
+         <value label="Enabled" defaultvalue="true"/>
+      </property>
+      <property valuetype="integer" variable="false" name="posX">
+         <help>x-position of the switch's center</help>
+         <value label="X Position" defaultvalue="160"/>
+      </property>
+      <property valuetype="integer" variable="false" name="posY">
+         <help>y-position of the switch's center</help>
+         <value label="Y Position" defaultvalue="240"/>
+      </property>
+
+      <property valuetype="integer" variable="false" name="width">
+         <help>width of the switch in pixels</help>
+         <value label="Width" defaultvalue="34"/>
+      </property>
+      <property valuetype="integer" variable="false" name="height">
+         <help>height of the switch in pixels</help>
+         <value label="Height" defaultvalue="32"/>
+      </property>
+      <property valuetype="string" variable="false" name="customUpImage">
+         <help>Custom image file for the switch in its "up" state</help>
+         <value label="Custom Up Image" defaultvalue=""/>
+      </property>
+        <property valuetype="string" variable="false" name="customDownImage">
+         <help>Custom image file for the switch in its "down" state</help>
+         <value label="Custom Down Image" defaultvalue=""/>
+      </property>
+      <upgrade_transform/>
+   </definition_version>
+</definition>

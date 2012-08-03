@@ -1,0 +1,25 @@
+#!/bin/tcsh -f
+#
+
+setenv APPDIR ~/mv2/MVStudyApp
+#
+setenv nodelist " mirage-1 mirage-2 mirage-3 mirage-4 mirage-5 mirage-6 clinton.vrac.iastate.edu"
+# nVidia framelock master needs to start first
+
+
+foreach ig ($nodelist)
+
+	mkdir -p ~/.cluster
+	touch ~/.cluster/$ig
+	
+	if ( $ig == "clinton.vrac.iastate.edu" ) then
+	
+		$APPDIR/runscript --vrjmaster ./MotionAnalysisAB.jconf mirage.jconf JerryBoard.jconf gamepad.jconf&
+	else
+		#setenv DISPLAY $ig
+		ssh $ig $APPDIR/runscript --vrjslave > ~/.cluster/$ig &
+		sleep 0.2
+	endif
+		
+	endif
+end

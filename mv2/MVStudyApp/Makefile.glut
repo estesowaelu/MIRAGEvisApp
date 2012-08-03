@@ -1,0 +1,35 @@
+APP_NAME=	MVStudyAppGLUT
+all: $(APP_NAME)
+
+BUILD_TYPE = opt
+# Basic options.
+srcdir=		src/ \
+
+
+SRCS=	mainGLUT.cpp MVStudyApp.cpp\
+
+OBJDIR = GLUTBuild
+DEPDIR = GLUTBuild
+
+
+DZR_BASE_DIR=	/home/vr/apps/watch-libs/rhel6/doozer-2.1.6/share/flagpoll/../Doozer
+include $(DZR_BASE_DIR)/ext/vrjuggler/dzr.vrjuggler.mk
+
+#set OSGHOME if it isn't already set
+OSGHOME |=  /usr/local/OpenSceneGraph-2.8.1/
+OSG_LIB_DIR = $(OSGHOME)/lib64
+OPENTHREADS_LIB_DIR = $(OSG_LIB_DIR)
+
+EXTRA_INCLUDES+=        -I${OSGHOME}/include
+EXTRA_LIBS+=            -L${OSG_LIB_DIR} -losg -losgDB -losgGA -losgUtil -lOpenThreads -losgViewer -lglut -lGLU
+EXTRA_LIBS+=            -L${OPENTHREADS_LIB_DIR}
+
+
+# -----------------------------------------------------------------------------
+# Application build targets.
+# -----------------------------------------------------------------------------
+$(APP_NAME):  $(OBJS)
+	$(LINK) $(LINK_OUT)$@ $(OBJS) $(formats_LDADD) $(EXTRA_LIBS) $(LIBS)
+	
+clean:
+	rm -f $(OBJDIR)/*.o $(DEPDIR)/*.d $(APP_NAME)

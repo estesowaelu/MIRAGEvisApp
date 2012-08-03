@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?org-vrjuggler-jccl-settings configuration.version="3.0"?>
+<configuration xmlns="http://www.vrjuggler.org/jccl/xsd/3.0/configuration" name="Linux Joydev Configuration" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vrjuggler.org/jccl/xsd/3.0/configuration http://www.vrjuggler.org/jccl/xsd/3.0/configuration.xsd">
+   <elements>
+  	 <input_manager name="MotionAnalysis Manager" version="2">
+  	 	<driver_path>/home/users/kennyk/Graphics_Programming/motionAnalysis/trunk</driver_path>
+ 	 	 <driver>JerryBoard_drv</driver>
+  	 </input_manager>
+  	 <digital_proxy name="jerry0" version="1">
+ 	 	 <device>JerryBoard0</device>
+ 	 	 <unit>30</unit>
+  	 </digital_proxy>
+	  <digital_proxy name="jerry1" version="1">
+ 	 	 <device>JerryBoard0</device>
+ 	 	 <unit>40</unit>
+  	 </digital_proxy>
+  	 <digital_proxy name="jerry2" version="1">
+ 	 	 <device>JerryBoard0</device>
+ 	 	 <unit>20</unit>
+  	 </digital_proxy>
+
+  	 <alias name="Trigger0" version="1">
+ 	 	 <proxy>jerry0</proxy>
+  	 </alias>
+	   <alias name="Trigger1" version="1">
+ 	 	 <proxy>jerry1</proxy>
+  	 </alias>
+	   <alias name="Trigger2" version="1">
+ 	 	 <proxy>jerry2</proxy>
+  	 </alias>
+	 
+
+ <JerryBoard name="JerryBoard0" version="1">
+         <!--port>/dev/ttyUSB0</port-->
+         <UDPMode>true</UDPMode>
+         <min>0.0</min>
+         <max>1.0</max>
+	<verboseLevel>0</verboseLevel>
+	 <baudRate>19200</baudRate>
+         <analogs>3</analogs>
+         <digitals>3</digitals>
+         <device_host />
+      </JerryBoard>
+   </elements>
+
+
+</configuration>
+

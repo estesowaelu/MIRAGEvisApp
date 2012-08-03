@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?org-vrjuggler-jccl-settings definition.version="3.1"?>
+<definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.vrjuggler.org/jccl/xsd/3.1/definition" name="JerryBoard" icon_path="jar:file:${VJ_BASE_DIR}/bin/beans/ProxyEditor.jar!/org/vrjuggler/vrjconfig/customeditors/proxyeditor/images/position64.jpg" xsi:schemaLocation="http://www.vrjuggler.org/jccl/xsd/3.1/definition http://www.vrjuggler.org/jccl/xsd/3.1/definition.xsd">
+   <definition_version version="1" label="JerryBoard">
+      <abstract>false</abstract>
+      <help>hook up a tricked out JerryBoard &lt;tt&gt;JerryBoard&lt;/tt&gt; kernel module. (&lt;a href="http://www.infiscape.com/documentation/vrjuggler-config/2.2/configuring_vr_juggler/apcs04.html"&gt;more on Linux joystick device&lt;/a&gt;, &lt;a href="http://www.infiscape.com/documentation/vrjuggler-config/2.2/configuring_vr_juggler/ch02.html"&gt;more on input devices&lt;/a&gt;)</help>
+      <parent>digital_device</parent>
+      <parent>analog_device</parent>
+	<property valuetype="integer" variable="false" name="analogs">
+         <help>number of analog inputs</help>
+         <value label="Analogs" defaultvalue="1"/>
+      </property>
+      	<property valuetype="integer" variable="false" name="digitals">
+         <help>number of digital inputs</help>
+         <value label="Digitals" defaultvalue="1"/>
+      </property>
+      
+      	<property valuetype="integer" variable="false" name="baudRate">
+         <help>Data Rate</help>
+         <value label="Baud Rate" defaultvalue="19200"/>
+	          <enumeration editable="false">
+            <enum label="9600" value="9600"/>
+            <enum label="19200" value="19200"/>
+	    <enum label="38400" value="38400"/>
+	    <enum label="57600" value="57600"/>
+	    <enum label="115200" value="115200"/>
+         </enumeration>
+      </property>
+      
+      <property valuetype="string" variable="false" name="port">
+         <help>The serial port connected to the RF receiver</help>
+         <value label="Port" defaultvalue="/dev/ttyUSB0"/>
+      </property>
+      <property valuetype="float" variable="false" name="min">
+         <help>The lower bound for the range of valid values for the analog data. (&lt;a href="http://www.infiscape.com/documentation/vrjuggler-config/2.0/configuring_vr_juggler/apas03.html"&gt;more on Intersense trackers&lt;/a&gt;, &lt;a href="http://www.infiscape.com/documentation/vrjuggler-config/2.0/configuring_vr_juggler/apas03.html#d0e5261"&gt;more on the IS-900 driver&lt;/a&gt;)</help>
+         <value label="Range Minimum" defaultvalue="0.0"/>
+      </property>
+      <property valuetype="integer" variable="false" name="verboseLevel">
+         <help>output lots of data to the console</help>
+         <value label="verboseLevel" defaultvalue="0"/>
+      </property>
+	
+	<property valuetype="integer" variable="false" name="UDPPort">
+         <help>We can receive our data from UDP instead</help>
+         <value label="UDP Receive Port (Optional)" defaultvalue="9002"/>
+      </property>
+      <property valuetype="integer" variable="false" name="UDPMode">
+         <help>We can receive data over UDP packets</help>
+         <value label="UDP Mode" defaultvalue="false"/>
+      </property>
+      <property valuetype="float" variable="false" name="max">
+         <help>The upper bound for the range of valid values for the analog data. (&lt;a href="http://www.infiscape.com/documentation/vrjuggler-config/2.0/configuring_vr_juggler/apas03.html"&gt;more on Intersense trackers&lt;/a&gt;, &lt;a href="http://www.infiscape.com/documentation/vrjuggler-config/2.0/configuring_vr_juggler/apas03.html#d0e5261"&gt;more on the IS-900 driver&lt;/a&gt;)</help>
+         <value label="Range Maximum" defaultvalue="1.0"/>
+      </property>
+
+
+
+      <!--parent>position_device</parent>
+      <category>/Devices</category>
+      <property valuetype="configelement" variable="true" name="interface_elements">
+         <help>Buttons displayed on the iPhone</help>
+         <value label="Buttons"/>
+         <allowed_type>iPhone_button</allowed_type>
+         <allowed_type>iPhone_slider</allowed_type>
+         <allowed_type>iPhone_switch</allowed_type>
+      </property-->
+      <upgrade_transform/>
+   </definition_version>
+</definition>

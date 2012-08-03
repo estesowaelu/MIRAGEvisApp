@@ -1,0 +1,47 @@
+
+#this should set up the runtime environment for running my Juggler apps
+#echo $path
+set OS_VERSION=`cat /etc/redhat-release | sed 's/[a-z]//g' | sed 's/[A-Z]//g' | sed 's/ //g' | cut -f1 -d"."`
+
+switch ($OS_VERSION)
+		case 5: 
+	
+			setenv VJ_BASE_DIR /home/vr/apps/watch-libs/rhel5/vrjuggler-3.0.0-1
+			setenv FLAGPOLL_PATH ${VJ_BASE_DIR}/lib64/flagpoll:/home/vr/apps/watch-libs/rhel5/cppdom-1.0.3/lib64/flagpoll
+			setenv FLAGPOLL_PATH ${VJ_BASE_DIR}/../doozer-2.1.6/share/flagpoll
+			#echo "rhel5"
+			
+			breaksw
+		case 6:
+			setenv WATCH_HOME			/home/vr/apps/watch-libs/rhel6
+			setenv VJ_BASE_DIR /home/vr/apps/watch-libs/rhel6/vrjuggler-3.0.0-1
+			#setenv VJ_BASE_DIR /home/vr/apps/LVC/applications/libraries/rhel6/vrjuggler-3.0.0-1/
+			setenv FLAGPOLL_PATH ${VJ_BASE_DIR}/lib64/flagpoll:/home/vr/apps/watch-libs/rhel6/cppdom-1.0.3/lib64/flagpoll
+			setenv FLAGPOLL_PATH /home/vr/apps/watch-libs/rhel6/gmtl-0.6.1/share/flagpoll:${FLAGPOLL_PATH}
+			setenv FLAGPOLL_PATH /home/vr/apps/watch-libs/rhel6/doozer-2.1.6/share/flagpoll:${FLAGPOLL_PATH}
+			breaksw
+		default: 
+			echo "some version of redhat?  {OS_VERSION}"
+		breaksw
+	endsw
+setenv CPPDOM_HOME ${WATCH_HOME}/cppdom-1.0.3
+setenv PATH ${PATH}:/home/vr/apps/watch-libs/rhel6/flagpoll-0.9.4/bin/
+setenv LD_LIBRARY_PATH $VJ_BASE_DIR/lib64 
+#setenv FLAGPOLL_PATH /home/users/kennyk/makeshitwork/flaggy/flagpoll
+setenv OSGHOME  	 		${WATCH_HOME}/openscenegraph-3.0.1
+#	setenv FMOD_HOME			${WATCH_HOME}/fmod-4.36.03
+	#setenv OSGHOME /usr/local/OpenSceneGraph-2.8.2
+	setenv OSG_HOME ${OSGHOME}
+	setenv OSG_LIB_DIR ${OSGHOME}/lib64
+   	setenv OPENTHREADS_LIB_DIR $OSG_LIB_DIR
+	setenv FMOD_HOME /usr/local
+	setenv LD_LIBRARY_PATH "${LD_LIBRARY_PATH}:$OSGHOME/lib64"
+	setenv BOOST_HOME ${WATCH_HOME}/boost-1.45.0
+	setenv LD_LIBRARY_PATH "${BOOST_HOME}/lib/:${LD_LIBRARY_PATH}:.:/usr/local/lib"
+setenv VJ_CFG_PATH /home/users/bnew/vjconfig/vrj3
+
+setenv LD_LIBRARY_PATH "${CPPDOM_HOME}/lib64:${LD_LIBRARY_PATH}:${WATCH_HOME}/python-2.7/lib"
+#setenv JCCL_DEFINITION_PATH $VJ_BASE_DIR/share/vrjuggler-2.3.16/data/definitions/:./definitions
+setenv JCCL_DEFINITION_PATH $VJ_BASE_DIR/share/vrjuggler-3.0/data/definitions/:./vrjdefs
+#echo $VJ_BASE_DIR
+setenv SEMISTATIC_TRACKING_FILE /home/vr/apps/watch-apps/MrT/semiStaticObjects.xml

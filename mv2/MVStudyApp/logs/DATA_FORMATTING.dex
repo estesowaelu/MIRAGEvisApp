@@ -1,0 +1,11 @@
+=== TARGET CHANGE EVENT ===
+Event ID | Event Type | Scene ID | Timestamp | x position | y position | z position
+
+sample:
+139 tc 9 134214 -5 11 -30
+
+=== TRIGGER PULL EVENT ===
+Event ID | Event Type | Scene ID | Participant ID | Timestamp | Head Matrix {4x4} | Gun Matrix {4x4}
+
+sample:
+140 tp 9 0 136364 -0 0.72851 0 0 1 0 0 -0.72851 0 0.685035 0 -3.29939 5.30643 0.826493 1 0.98132 -0 0.448445 0 0 1 0 0 -0.448445 0 0.89381 0 -2.35665 5.29132 -0.897671 1 0.99347

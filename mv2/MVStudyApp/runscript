@@ -1,0 +1,43 @@
+#!/bin/tcsh -f
+
+
+
+cd ~/mv2/MVStudyApp
+	pwd
+	echo $SHELL
+#	source setupEnv
+#	source VJ3/sourceme.sh
+	setenv VPR_DEBUG_NFY_LEVEL 50
+	set slaveString = ${1}
+			set WATCH_HOME	=		/home/vr/apps/watch-libs/rhel6
+			set VJ_BASE_DIR = /home/vr/apps/watch-libs/rhel6/vrjuggler-3.0.0-1
+
+
+set LD_LIBRARY_PATH = $VJ_BASE_DIR/lib64 
+#set FLAGPOLL_PATH /home/users/kennyk/makeshitwork/flaggy/flagpoll
+set OSGHOME  	 	=	${WATCH_HOME}/openscenegraph-3.0.1
+#	set FMOD_HOME			${WATCH_HOME}/fmod-4.36.03
+	#set OSGHOME /usr/local/OpenSceneGraph-2.8.2
+	set OSG_HOME = ${OSGHOME}
+	set OSG_LIB_DIR = ${OSGHOME}/lib64
+
+	
+set VJ_CFG_PATH = /home/users/bnew/vjconfig/vrj3
+
+#ls $VJ_BASE_DIR/share/vrjuggler-3.0/data/definitions/
+setenv JCCL_DEFINITION_PATH $VJ_BASE_DIR/share/vrjuggler-3.0/data/definitions/:./vrjdefs
+#echo $VJ_BASE_DIR
+set SEMISTATIC_TRACKING_FILE = /home/vr/apps/watch-apps/MrT/semiStaticObjects.xml
+	echo "I am a " $slaveString
+setenv LD_LIBRARY_PATH /home/vr/apps/watch-libs/rhel6/cppdom-1.0.3/lib64:/home/vr/apps/watch-libs/rhel6/boost-1.45.0/lib/:/home/vr/apps/watch-libs/rhel6/vrjuggler-3.0.0-1/lib64:/home/vr/apps/watch-libs/rhel6/openscenegraph-3.0.1/lib64:.:/usr/local/lib:/home/vr/apps/watch-libs/rhel6/python-2.7/lib
+echo " "
+echo LD Library path is $LD_LIBRARY_PATH
+setenv SOMETHING blah
+echo something is $SOMETHING
+set PATH = $LD_LIBRARY_PATH
+#ldd MVStudyAppVRJ
+	 MVStudyAppVRJ $*
+	
+echo "Done"
+
+

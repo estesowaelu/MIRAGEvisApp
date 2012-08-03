@@ -1,0 +1,148 @@
+============================================
+MVStudyApp for Summer 2012 SPIRE-EIT REU Program
+Depth Perception in Virtual Environments aka Multiview Study
+
+Faculty Mentor: Jon Kelly
+Graduate Mentors: Melissa Burton, Ken Kopecky
+REU Interns: Timothy Honeywell, Amanda Skinner, Andrew Mendez
+
+Direct questions to tfhoneywell@gmail.com
+============================================
+
+
+==========>> DIRECTORY CONTENTS <<==========
+
+MVStudyApp/ contains:
+
+folders:
+--------------------------------------------
+src/
+	# source code
+vrjdefs/
+	# VRJuggler definitions
+data/
+	# models and textures for environment
+logs/
+	# experiment logs
+
+config files:
+--------------------------------------------
+mirage.jconf
+	# mirage configuration
+clinton-static.jconf
+	# cluster configuration
+MotionAnalysis.jconf
+	# tracking configuration (leader-follower)
+MotionAnalysisAB.jconf
+	# tracking configuration (2-person averaged)
+MotionAnalysisABC.jconf
+	# tracking configuration (3-person averaged)
+JerryBoard.jconf
+	# gun trigger system configuration
+gamepad.jconf
+	# gampad configuration
+
+scripts:
+--------------------------------------------
+runMirage
+	# program runscript
+runscript
+	# runMirage dependancy
+killMirage
+	# program killscript
+
+compilation scripts:
+--------------------------------------------
+setupEnv
+	# compilation environment configuration script
+flagpoll
+	# flagpoll script
+Makefile.glut
+	# makefile for standalone OpenGL version
+Makefile.vrj
+	# makefile for OSG/VRJuggler version
+
+VRJuggler libraries:
+--------------------------------------------
+lib*.a
+lib*.so
+
+stray files:
+--------------------------------------------
+README
+	# this file
+MVStudyApp.xcodeproj
+	# XCode project file
+bytelog.txt
+	# error logfile
+
+
+
+============================================
+INSTRUCTIONS
+============================================
+
+Whenever the word "run" is used, it assumes you have Terminal open and are in the applcation directory ( /Volumes/users/%_YOURUSERNAME/mv2/MVStudyApp/ ). Type the command within the quotation marks and press Return/Enter.
+
+--------------------------------------------
+========>> "Installing" the app
+
+Unzip the archive and place the folder "mv2" in your home directory: /Volumes/users/%_YOURUSERNAME/mv2/
+
+--------------------------------------------
+========>> Compiling the app
+
+1) Run "source setupEnv"
+2) Run "gmake -f Makefile.vrj"
+
+--------------------------------------------
+========>> Running the app
+
+1) Turn on cameras
+2) Turn on tracking computer (analysis analysis)
+3) Launch Cortex
+4) Select Helmets A/B/C, Guns A/B/C, connect to cameras, click "Run"
+5) Launch Cortex Repeater
+6) Put batteries in guns
+7) Make sure JerryBoard is running
+8) Make sure guns fire
+9) Run "runMirage"
+10) Advance to test target (press <1> on gamepad)
+11) Make sure image is in stereo
+12) Make sure trigger pulls are being logged
+13) Cycle through the target positions by pressing <1> on the gamepad.
+14) The app will terminate itself on completing a sequence of 90 targets
+15) In "runMirage," swap MotionAnalysis config files:
+	-> if MotionAnalysis.jconf was just used, switch to MotionAnalysisAB.jconf
+	-> if MotionAnalysisAB.jconf was just used, switch to MotionAnalysis.jconf
+16) Repeat 9 - 14
+17) All data is logged in the logs/ folder. Look at DATA_FORMATTING.dex for more details.
+
+--------------------------------------------
+========>> Quitting the app
+
+1) The app will terminate itself at the end of a trial.
+2) If you need to terminate it at any other time, run "killMirage"
+3) If necessary, click on the window titled "Head Event Window" and press <Escape>.
+
+--------------------------------------------
+========>> Tips
+
+When debugging, a useful command is: "gmake -f Makefile.vrj && killMirage && runMirage"
+
+--------------------------------------------
+========>> Troubleshooting
+
+A -> Shutter glasses not working
+
+In Cortex:
+1) "Pause"
+2) "Disconnect from cameras"
+3) "Connect to cameras"
+4) "Run"
+
+B -> Stereo flipped
+
+In mirage.jconf:
+1) Find the "interocular_distance" item
+2) Flip the sign on its value

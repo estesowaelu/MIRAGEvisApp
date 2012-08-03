@@ -1,0 +1,10 @@
+# MTL written from treetrunk.obj
+newmtl Default
+Kd 1 1 1
+Ns 16
+d 1
+illum 2
+Ka 0 0 0
+Ks 0 0 0
+map_Kd Bark.jpg
+map_Bump Bark_Bump.jpg

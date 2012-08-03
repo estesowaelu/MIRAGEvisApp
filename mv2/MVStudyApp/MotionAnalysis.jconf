@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?org-vrjuggler-jccl-settings configuration.version="3.0"?>
+<configuration xmlns="http://www.vrjuggler.org/jccl/xsd/3.0/configuration" name="Linux Joydev Configuration" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vrjuggler.org/jccl/xsd/3.0/configuration http://www.vrjuggler.org/jccl/xsd/3.0/configuration.xsd">
+   <elements>
+      <input_manager name="MotionAnalysis Manager" version="2">
+         <!--driver_path>/home/vr/apps/LVC/applications/source/motionAnalysis/trunk/</driver_path-->
+	 <driver_path>/home/users/kennyk/Graphics_Programming/motionAnalysis/trunk</driver_path>
+         <driver>MotionAnalysis_drv_WATCH</driver>
+      </input_manager>
+      <position_proxy name="HelmetA" version="1">
+         <device>MA0</device>
+         <unit>0</unit>
+      </position_proxy>
+      <position_proxy name="HelmetB" version="1">
+         <device>MA0</device>
+         <unit>1</unit>
+      </position_proxy>
+      <position_proxy name="HelmetC" version="1">
+         <device>MA0</device>
+         <unit>2</unit>
+      </position_proxy>
+      <position_proxy name="HelmetB_Si" version="1">
+         <device>MA0</device>
+         <unit>3</unit>
+      </position_proxy>
+      <position_proxy name="WeaponAProxy" version="1">
+         <device>MA0</device>
+         <unit>4</unit>
+      </position_proxy>
+      <position_proxy name="WeaponBProxy" version="1">
+         <device>MA0</device>
+         <unit>9</unit>
+      </position_proxy>
+      <position_proxy name="WeaponCProxy" version="1">
+         <device>MA0</device>
+         <unit>5</unit>
+      </position_proxy>
+      <position_proxy name="barrierAProxy" version="1">
+         <device>MA0</device>
+         <unit>7</unit>
+      </position_proxy>
+      <position_proxy name="barrierBProxy" version="1">
+         <device>MA0</device>
+         <unit>8</unit>
+      </position_proxy>
+       <position_proxy name="PlanarProxy" version="1">
+         <device>MA0</device>
+         <unit>10</unit>
+      </position_proxy>
+       <position_proxy name="Cockpit" version="1">
+         <device>MA0</device>
+         <unit>11</unit>
+      </position_proxy>
+      <alias name="VJHead" version="1">
+         <proxy>HelmetA</proxy>
+      </alias>
+      <alias name="VJWand" version="1">
+         <proxy>HelmetA</proxy>
+      </alias>
+      <alias name="HeadA" version="1">
+         <proxy>HelmetA</proxy>
+      </alias>
+      <alias name="HeadB" version="1">
+         <proxy>HelmetB</proxy>
+      </alias>
+      <alias name="HeadC" version="1">
+         <proxy>HelmetC</proxy>
+      </alias>
+      <alias name="HeadB_Si" version="1">
+         <proxy>HelmetB</proxy>
+      </alias>
+      <alias name="WeaponA" version="1">
+         <proxy>WeaponCProxy</proxy>
+      </alias>
+      <alias name="WeaponB" version="1">
+         <proxy>WeaponBProxy</proxy>
+      </alias>
+      <alias name="WeaponC" version="1">
+         <proxy>weaponAProxy</proxy>
+      </alias>
+      <alias name="BarrierA" version="1">
+         <proxy>barrierAProxy</proxy>
+      </alias>
+      <alias name="BarrierB" version="1">
+         <proxy>barrierBProxy</proxy>
+      </alias>
+       <alias name="Planar" version="1">
+         <proxy>PlanarProxy</proxy>
+      </alias>
+      <MotionAnalysis name="MA0" version="1">
+         <port>5678</port>
+         <server_name>10.0.4.2</server_name>
+         <min>0.0</min>
+         <max>1.0</max>
+         <props>
+            <Prop name="HelmetA" version="1" />
+         </props>
+         <props>
+            <Prop name="HelmetB" version="1" />
+         </props>
+         <props>
+            <Prop name="HelmetC" version="1" />
+         </props>
+         <props>
+            <Prop name="HelmetB_Si" version="1" />
+         </props>
+         <props>
+            <Prop name="GunA" version="1" />
+         </props>
+         <props>
+            <Prop name="GunC" version="1" />
+         </props>
+         <props>
+            <Prop name="GunD" version="1" />
+         </props>
+         <props>
+            <Prop name="BarrierA" version="1" />
+         </props>
+         <props>
+            <Prop name="BarrierB" version="1" />
+         </props>
+         <props>
+            <Prop name="GunB" version="1" />
+         </props>
+          <props>
+            <Prop name="Planar" version="1" />
+         </props>
+         <props>
+            <Prop name="Cockpit" version="1" />
+         </props>
+      </MotionAnalysis>
+   </elements>
+</configuration>
+
