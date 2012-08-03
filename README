@@ -1,12 +1,13 @@
 ============================================
-MVStudyApp for Summer 2012 SPIRE-EIT REU Program
-Depth Perception in Virtual Environments aka Multiview Study
-
-Faculty Mentor: Jon Kelly
-Graduate Mentors: Melissa Burton, Ken Kopecky
-REU Interns: Timothy Honeywell, Amanda Skinner, Andrew Mendez
+MVStudyApp for SPIRE-EIT 2012
+Depth Perception in Virtual Environments (aka Multiview Study)
 
 Direct questions to tfhoneywell@gmail.com
+
+NOTE:
+This software was built to run on specific hardware in a specific laboratory.
+It is kept here for demonstration purposes ONLY.
+
 ============================================
 
 
@@ -99,7 +100,7 @@ Unzip the archive and place the folder "mv2" in your home directory: /Volumes/us
 ========>> Running the app
 
 1) Turn on cameras
-2) Turn on tracking computer (analysis analysis)
+2) Turn on tracking computer
 3) Launch Cortex
 4) Select Helmets A/B/C, Guns A/B/C, connect to cameras, click "Run"
 5) Launch Cortex Repeater
