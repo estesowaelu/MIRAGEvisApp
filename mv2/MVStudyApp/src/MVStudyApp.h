@@ -5,7 +5,7 @@
  *  Created by Kenneth Kopecky on 8/15/09.
  *  Copyright 2009 Orange Element Studios. All rights reserved.
  *
- *	Modified by Timothy Honeywell, June/July 2012.
+ *	Expanded by Timothy Honeywell, June/July 2012.
  *
  */
 

@@ -3,7 +3,6 @@
 //  MVStudyApp
 //
 //  Created by Ken Kopecky on 6/18/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #ifndef MVStudyApp_HistoryFrame_h
@@ -33,7 +32,7 @@ public:
 		studyMode = SINGLE_USER;
 	}
 	
-	TiXMLElement* toXML()		{return NULL;}				//TODO:  fill this in.  Ken can help if need be
+	TiXMLElement* toXML()		{return NULL;}				//TODO:  fill this in.
 	//all our data
 	int frameNum;
 	float frameTime;
